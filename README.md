@@ -1,3 +1,23 @@
+## Test contratos Pangolin en Avalanche
+
+Testnet Fuji
+Direcciones de Pangolin en Fuji Testnet
+
+-    **Factory**: 0x2a496ec9e9bE22e66C61d4Eb9d316beaEE31A77b
+-    **Router**: 0x2D99ABD9008Dc933ff5c0CD271B88309593aB921
+-    **PNG Token**: 0x83080D4b5fC60e22dFFA8d14AD3BB41Dde48F199
+
+**Instalación de contratos Pangolin:**
+
+- forge install OpenZeppelin/openzeppelin-contracts
+
+- forge install pangolindex/exchange-contracts/tree/main/contracts/pangolin-core
+
+- forge install pangolindex/exchange-contracts/tree/main/contracts/pangolin-periphery
+
+
+## A continuacion boilerplate del proyecto creado con forge init: 
+
 ## Foundry
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
