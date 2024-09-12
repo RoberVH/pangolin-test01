@@ -13,10 +13,10 @@ Direcciones de Pangolin en Fuji Testnet
 
 - forge install pangolindex/exchange-contracts/tree/main/contracts/pangolin-core
 
-- forge install pangolindex/exchange-contracts/tree/main/contracts/pangolin-periphery
+- forge install pangolindex/exchange-contracts/tree/main/contracts/pangolin-periphery  
+<br>  
+<span style="color:red">_A continuacion boilerplate del proyecto creado con forge init:_</span>
 
-
-## A continuacion boilerplate del proyecto creado con forge init: 
 
 ## Foundry
 
