@@ -1,3 +1,10 @@
+#  Hackacthon de OpenWeb Frutal Web House ETH Mexico
+Este proyecto se presenta al Hackacthon de OpenWeb Frutal Web House ETH Mexico en linea y presencial en Merida [link](https://lu.ma/3xn4r8o2)
+
+## Equipo Gubbi App
+
+
+
 ## Test contratos Pangolin en Avalanche
 
 Testnet Fuji
@@ -23,6 +30,8 @@ Data:
 - Contract Address: **0x3AF1B118857551a33be9604C93C2f5316f15b2Cb**
 - Block: 35835224
 - Paid: 0.0182817 ETH (609390 gas * 30 gwei)
+
+<br>
 
 <br>  
 <span style="color:red">A continuacion boilerplate del proyecto creado con forge init:</span>
