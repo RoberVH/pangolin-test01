@@ -14,9 +14,18 @@ Direcciones de Pangolin en Fuji Testnet
 - forge install pangolindex/exchange-contracts/tree/main/contracts/pangolin-core
 
 - forge install pangolindex/exchange-contracts/tree/main/contracts/pangolin-periphery  
-<br>  
-<span style="color:red">_A continuacion boilerplate del proyecto creado con forge init:_</span>
 
+#### Deployed to Avalanche Fuji Testnet
+Command: ``forge script script/DeployGubbiContract.s.sol --rpc-url $RPC_TEST --private-key $PVTE_KEY --broadcast``
+<br>
+Data: 
+- [Success]Hash: 0x7e961fd4a9739af18353b98d76058fab884057c757a668e17423566b00c2c837
+- Contract Address: **0x3AF1B118857551a33be9604C93C2f5316f15b2Cb**
+- Block: 35835224
+- Paid: 0.0182817 ETH (609390 gas * 30 gwei)
+
+<br>  
+<span style="color:red">A continuacion boilerplate del proyecto creado con forge init:</span>
 
 ## Foundry
 

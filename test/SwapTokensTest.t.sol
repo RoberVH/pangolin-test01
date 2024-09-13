@@ -108,87 +108,21 @@ contract SwapTokensTest is Test {
             uint amountOutMin = 1;
             console2.log('Trading In:', amountIn);
             getIntDec(amountIn, 1e18);
-            uint[] memory amountsExchanged = new uint[](4);
+            uint[] memory amountsExchanged = new uint[](2);
+            uint256 allowanceAmount = contratoERC20_WABAX.allowance(user, Constants.PANGOLIN_ROUTER);
+            console.log('user ha aprobado a router para gastar: ', allowanceAmount);
             vm.prank(user);
             amountsExchanged = router.swapExactTokensForTokens(
                     amountIn,
                     amountOutMin,
                     path,
                     user,
-                    block.timestamp);            
+                    block.timestamp);        
+            console2.log('Amounts exchange lenght', amountsExchanged.length);
+            for (uint8 i=0; i<amountsExchanged.length; i++) console.log('amounts', i, ' = ', amountsExchanged[i]);
             console2.log('Despues del swap');
             getBalancesonTestTokens();
             assertGe(contratoERC20_JOE.balanceOf(user), amountOutMin, "JOE balance of user");
         }
 
-        function exchangeTokens() public pure{
-            console2.log('Exchange tokens pending');
-        //     uint256 currentTime = block.timestamp;
-        //  uint256 amountOutMin =  amounts[1] -  10000000000000000;   
-        //  console2.log("Monto minimo a recibir", amountOutMin );
-
-        // // get output amount using only two pairs
-        //  console2.log("getAmountOut using only two pairs");
-
-        //     router.swapExactTokensForTokens(
-        //     amountIn,        // Monto exacto de tokens a intercambiar
-        //     amountOutMin,    // Monto mínimo que aceptas recibir
-        //     path,            // Camino de intercambio
-        //     0x95c694C18ef33bC9280a948E1c14F5bA07e62B83,              // Dirección del destinatario
-        //     currentTime + 300         // Plazo para completar el swap
-        // );
-
-    }
-
-    /* function getExpectedTokens(uint256 usdcAmount) public view returns (uint256) {
-        address[] memory path = new address[](2);
-        path[0] = USDC;
-        path[1] = WETH_E;
-
-        uint256[] memory amounts = router.getAmountsIn(usdcAmount, path);
-        return amounts[0]; // Amount of WETH.e needed
-    }
-
-    function swapTokens(uint256 usdcAmount) public returns (uint256) {
-        // Approve router to spend USDC
-        usdc.approve(address(router), usdcAmount);
-
-        address[] memory path = new address[](2);
-        path[0] = USDC;
-        path[1] = WETH_E;
-
-        uint256 deadline = block.timestamp + 15 minutes;
-
-        uint256[] memory amounts = router.swapExactTokensForTokens(
-            usdcAmount,
-            0, // We don't set a minimum as this is a test, but in production you should
-            path,
-            address(this),
-            deadline
-        );
-
-        return amounts[1]; // Amount of WETH.e received
-    }
-
-    function test_getExpectedTokens() public view {
-        uint256 usdcAmount = 1000 * 1e6; // 1000 USDC
-        uint256 expectedWethE = getExpectedTokens(usdcAmount);
-        console.log("Expected WETH.e for 1000 USDC:", expectedWethE);
-    }
-
-    function test_swapTokens() public {
-        uint256 usdcAmount = 1000 * 1e6; // 1000 USDC
-        
-        // Mint some USDC for testing
-        deal(USDC, address(this), usdcAmount);
-
-        uint256 initialWethEBalance = wethE.balanceOf(address(this));
-        uint256 receivedWethE = swapTokens(usdcAmount);
-
-        uint256 finalWethEBalance = wethE.balanceOf(address(this));
-
-        assertEq(finalWethEBalance - initialWethEBalance, receivedWethE, "Received WETH.e doesn't match balance change");
-        console.log("Received WETH.e for 1000 USDC:", receivedWethE);
-    } 
-    */
 }
